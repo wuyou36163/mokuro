@@ -53,7 +53,6 @@ def run(*paths,
             logger.exception(f'Error while processing {path}.\nPath must be a directory or a supported file type: {(", ").join(get_supported_file_types())}.')
         try:
             content_path = unzip_if_zipped(path)
-            ovg.process_dir(content_path, as_one_file=as_one_file)
         except Exception as e:
             logger.exception(f'Error while processing {path}')
         else:
